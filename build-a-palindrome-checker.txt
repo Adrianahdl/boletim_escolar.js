@@ -1,0 +1,63 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validador de Palíndromos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Verificador de Palíndromos</h1>
+  <input type="text" id="text-input" placeholder="Digite aqui">
+  <button id="check-btn">Verificar</button>
+  <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+
+  <script>
+    function isPalindrome(str) {
+      // Remove todos os caracteres não alfanuméricos e converte para minúsculas
+      const cleaned = str.replace(/[^a-z0-9]/gi, '').toLowerCase();
+      const reversed = cleaned.split('').reverse().join('');
+      return cleaned === reversed;
+    }
+
+    document.getElementById("check-btn").addEventListener("click", function () {
+      const input = document.getElementById("text-input").value;
+      const result = document.getElementById("result");
+
+      if (!input.trim()) {
+        alert("Please input a value.");
+        return;
+      }
+
+      if (isPalindrome(input)) {
+        result.textContent = `${input} is a palindrome.`;
+      } else {
+        result.textContent = `${input} is not a palindrome.`;
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+** end of index.html **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+
+** start of script.js **
+
+
+
+** end of script.js **
+
